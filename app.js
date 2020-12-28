@@ -54,7 +54,7 @@ const Post = mongoose.model('Post', postSchema);
 const userSchema = mongoose.Schema({
   username: {
     type: String,
-    required : true
+    
   },
   googleId: {
     type: String,
@@ -64,7 +64,7 @@ const userSchema = mongoose.Schema({
   },
   password: {
     type: String,
-    required : true
+    
   },
   date: {
     type: Date,
