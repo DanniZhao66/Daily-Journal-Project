@@ -73,10 +73,7 @@ const userSchema = mongoose.Schema({
   authorName: {
     type: Object,
   },
-  post: {
-    type: String,
-    required : true
-  }
+  
 });
 
 userSchema.plugin(passportLocalMongoose, {
