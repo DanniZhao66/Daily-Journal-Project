@@ -13,7 +13,6 @@ const findOrCreate = require('mongoose-findorcreate');
 const FacebookStrategy = require('passport-facebook').Strategy
 
 const homeStartingContent = "Welcome to your Daily Journal!";
-const port = 3000
 const app = express();
 const _ = require('lodash');
 
@@ -345,6 +344,10 @@ app.post("/delete", function (req, res) {
 
 
 ////
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
