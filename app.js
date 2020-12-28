@@ -32,7 +32,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {  //"mongodb://localhost:27017/userDB"
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
