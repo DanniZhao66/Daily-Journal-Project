@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+
+    <div class="register-login">
+    
+     <div class="card bg-light">
+      <article class="card-body mx-auto" style="max-width: 400px;">
+         <h1 class="card-title mt-3">Login Your Account</h1>
+    
+         <div class="auth-social">
+            <p>
+            <a href="/auth/google" class="btn btn-block btn-google" > <i class="fab fa-google"></i>   Login via Google</a>
+            <a href="/auth/facebook"class="btn btn-block btn-facebook"> <i class="fab fa-facebook"></i>   Login via facebook</a>
+            </p>
+         </div>
+    
+          <p class="divider-text">
+            <span class="bg-light">OR</span>
+          </p>
+    
+        <!-- form-start// -->
+          <form action="/login" method="POST" >
+            <%- include('partials/messages') %>
+           <div class="form-group input-group">
+              <input name="username" class="register-input " placeholder="Email address" type="email">
+           </div> <!-- form-group// -->
+    
+           <div class="form-group input-group">
+              <input name="password" class="register-input" placeholder="Password" type="password">
+           </div> <!-- form-group// -->
+    
+           <div class="form-group">
+              <button href="/dashboard" type="submit" class="btn btn-account btn-block"> Log In  </button> 
+           </div> <!-- form-group// -->
+          <p class="text-center">Not a user? <a href="/register">Register</a> </p>
+    
+         </form>
+       </div>
+       <!-- card.// -->
+     </div> 
+    
+     
+
+    <!--container end.//-->
+
+<%- include('partials/footer') %>

@@ -1,0 +1,349 @@
+
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+  box-sizing: border-box;
+
+}
+.home{
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.home-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 2.5rem;
+    color: #30475e;
+
+}
+.page-contact{
+  display:inline-block;
+  padding-top: 6rem;
+}
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+  color: #30475e;
+  text-align: left;
+}
+
+.page-main{
+  padding: 2rem 0 2rem 0;
+  margin-top:3rem;
+}
+.page-main--sub{
+  margin-bottom: 1rem;
+}
+.page-main--text{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  padding: .4rem 0 .3rem 0;
+  display: block;
+}
+
+.page-main--title{
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color:#30475e;
+  
+}
+
+.page-main--content  {
+  margin-bottom: 3rem;
+  
+}
+
+.page-social{
+  display:block;
+  padding-top: 1rem;
+  font-family: 'Playfair Display', serif;
+  color:#30475e;
+
+}
+.icon{
+  box-sizing: border-box;
+  color:#30475e;
+}
+
+a:link,
+a:active, a:visited, a:focus,a:hover
+{
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:link icon-text{
+  font-size: 1.5rem;
+ 
+}
+
+.page-social:hover{
+  color:#f05454;
+}
+
+.text, p {
+  color:#30475e;
+
+}
+.container {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.home-button{
+color: #f05454 !important;
+font-size: 1.4rem;
+background-color: white;
+border: .24rem solid #f05454;
+transition-duration: 0.2s;
+margin-top: 2.5rem;
+padding: 1rem 1rem 1rem 1.4rem;
+letter-spacing: .5rem;
+border-radius: .8rem;
+outline: none;
+}
+
+
+.home-button:hover {
+    color: white !important;
+    background-color: #f05454;
+}
+
+
+.navbar {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    letter-spacing: .5rem;
+}
+.navbar-nav  li a:hover {
+    color: #f05454 !important;
+}
+
+.footer-padding {
+	padding-bottom: 6rem;
+}
+
+.footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 6rem;
+	background-color: #93abd3;
+}
+
+.footer p {
+	margin-top: 2.5rem;
+	font-size: 1.2rem;
+  color: #fff;
+}
+
+.register-login{
+  position: relative;
+  top:50%;
+  left:50%;
+ 
+}
+
+.card{
+  position: absolute;
+  text-align: center;
+  transform:translate(-55%,10%);
+}
+
+.card-title {
+  font-size: 3.5rem;
+  padding: 3rem;
+  font-family: 'Playfair Display', serif;
+}
+.text-center {
+  padding: .7rem;
+
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.divider-text span {
+    padding: .7rem;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+    background-color: white;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    border-bottom: .1rem solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+    transform: translate(-5%, 0);
+}
+
+.btn-facebook {
+  background-color: #f05454;
+  color: #fff;
+  padding: 1rem 3.5rem;
+  display: block;
+}
+.btn-facebook:hover{
+  color: white !important;
+  background-color: #93abd3;
+}
+
+.btn-google {
+  background-color: #f05454;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  padding: 1rem 3.5rem;
+  display: block;
+}
+
+.btn-google:hover{
+  color: white !important;
+  background-color: #93abd3;
+}
+
+.btn-primary{
+  background-color: #f05454;
+  color: #fff;
+  border:0;
+  margin-left: 3%;
+  padding: 1rem 1.5rem;
+}
+
+.btn-primary-compose{
+  background-color: #f05454;
+  color: #fff;
+  border:0;
+  padding: 1rem 1.5rem;
+  font-family: 'Playfair Display', serif;
+  border-radius: .3rem;
+}
+
+.btn-primary-compose:hover{
+  color: white !important;
+  background-color: #93abd3;
+}
+
+.btn-primary:hover{
+  color: white !important;
+  background-color: #93abd3;
+}
+.register-input{
+border: .1rem solid #f05454;
+border-radius: .3rem;
+width: 32rem;
+padding: 1rem 1.5rem;
+display: block;
+outline: none;
+margin-bottom: .8rem; 
+margin-left: 11%;
+clear: both;
+}
+
+/*
+border: 1px solid #f7d23b;
+    width: 250px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    outline: none;
+*/
+.auth-social{
+  margin: 1rem 1rem;
+}
+
+form {
+  margin-left: 1.4rem; 
+}
+.form-group{
+  position: relative;
+  
+}
+.form-group-compose{
+  padding-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+
+.btn-account{
+  transform:translate( 5%, 0);
+
+}
+.btn-block{
+  width: 32rem;
+  background-color: #f05454;
+  color: #fff;
+  border:0;
+  margin-left: 5%;
+  padding: 1rem 1.5rem;
+}
+
+
+.btn-block:hover{
+  color: white !important;
+  background-color: #93abd3;
+}
+
+.alert-button {	
+
+	color:#fff;
+	background-color:#fad2d2;
+	border-color: #faebcc;
+	padding: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  border-radius: .4rem;
+  z-index: 1;
+  clear: both;
+  }
+  
+
+
+.start-content{
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #a7a5a5;
+  margin-top: 2rem;
+
+}
+
+.start-text{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.5rem;
+  color: #a7a5a5;
+  margin-top: 2rem;
+  margin-left: .5rem;
+}
+
+

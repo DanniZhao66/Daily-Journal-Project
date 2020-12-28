@@ -1,0 +1,43 @@
+<%- include('partials/header') -%>
+
+<div class="home-page">
+
+  <a href="/compose" class="btn-primary-compose" role="button" aria-disabled="true" style="float: right;">Compose</a>
+
+   <% posts.forEach(function(post){ %>
+    <!-- <a href="/post/<%= post._id %>" class="title"> --> 
+      <h1 class="page-title" > <%= post.postTitle %> </h1>
+    <!-- </a> --> 
+
+    <% if(post.postBody.length < 300) { %>
+
+    <p class="page-main--text"><%=post.postBody%>
+      <a class="readmore" href="/post/<%=post._id%>">&nbsp Read More</a>
+    </p>
+
+    <% } else {%>
+
+    <p class="page-main--text">
+      <%= post.postBody.slice(0,300)+"..." %>
+      <a class="readmore" href="/post/<%=post._id%>">&nbsp Read More</a>
+    </p>
+
+    <% }}); %>
+
+    <%  if (posts.length === 0){ %>
+      
+  
+      <div class="start-content">
+        <%= startingContent %>  
+      </div>
+    
+     <div class="start-text">
+        Let's compose your first post. 
+     </div>
+    
+     <%  } %>
+  
+
+</div>
+
+<%- include('partials/footer') -%>

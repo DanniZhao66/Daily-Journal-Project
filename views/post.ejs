@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+
+<div class="post-page"></div>
+
+    <div class="form-group-compose">
+        
+        <h1 class="page-title"> <%= postTitle %> </h1>
+        <p class="page-main--text">  <%= postBody %>  </p>
+    
+        <p class="page-main--text" style="color:#a7a5a5;"> On: <%= post.date%></p>
+        
+
+    </div>
+
+    <div class="delete">
+        <form action="/delete" method="POST">
+          <button type="submit" class="btn-primary-compose" name="deletedPost" value="<%= post._id %>" onChange="this.form.submit()"
+            style="float: right;">
+            DELETE</button>
+        </form>
+    </div>
+
+</div>
+
+
+<%- include('partials/footer') -%>
