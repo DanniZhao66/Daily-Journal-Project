@@ -33,7 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {  //"mongodb://localhost:27017/userDB"
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -288,6 +288,13 @@ app.post('/compose', (req, res) => {
 
 app.post('/register', (req,res)=>{
   let errors = [];
+  if (req.body.password.length < 6) {
+    errors.push({ msg: "Password should be at least 6 characters" });
+  }
+
+  if (errors.length > 0) {
+    res.render("register", { errors, navArr });
+  } else {
   User.register({ username: req.body.username }, req.body.password, function(err, user){
     
     if (err) {
@@ -299,8 +306,10 @@ app.post('/register', (req,res)=>{
       });
     }
 });
-//}
+}
 });
+
+
 
 app.post("/login", function (req, res) {
   let errors = [];
