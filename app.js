@@ -10,7 +10,7 @@ const passport = require("passport"); //, LocalStrategy = require('passport-loca
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
-const FacebookStrategy = require('passport-facebook').Strategy
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 const homeStartingContent = "Welcome to your Daily Journal!";
 const app = express();
@@ -121,6 +121,19 @@ passport.use(new GoogleStrategy({
 }
 ));
 
+passport.use(new FacebookStrategy({
+  clientID: process.env.FACEBOOK_APP_ID,
+  clientSecret: process.env.FACEBOOK_APP_SECRET,
+  callbackURL: "https://protected-reef-52698.herokuapp.com/auth/facebook/callback",
+  profileFields: ['id', 'displayName', 'photos', 'email']
+},
+function(accessToken, refreshToken, profile, cb) {
+  User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+    return cb(err, user);
+  });
+}
+));
+
 const navArr = [];
 //////////////////////////////////////////////////////////Get social
 
@@ -139,20 +152,17 @@ app.get('/auth/google/dailyjournal', //HIGHLIGHT : changed
   });
 
 ///
-app.get('/auth/facebook',
-  passport.authenticate('facebook') //, { scope: ['profile'] })
-);
 
-app.get('/auth/facebook/dailyjournal', //HIGHLIGHT : changed
-  passport.authenticate('facebook', {
-    failureRedirect: '/login'
-  }),
+
+  app.get('/auth/facebook',
+  passport.authenticate('facebook'));
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/dashboard');
   });
-
-
 
 //////////////////////////////////////////////////////////Get
 
