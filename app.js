@@ -8,9 +8,9 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const passport = require("passport"); //, LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require("passport-local-mongoose");
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+//const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
-const FacebookStrategy = require('passport-facebook').Strategy;
+//const FacebookStrategy = require('passport-facebook').Strategy;
 
 const homeStartingContent = "Welcome to your Daily Journal!";
 const app = express();
@@ -97,7 +97,7 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-
+/*
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
@@ -134,7 +134,7 @@ function(accessToken, refreshToken, profile, cb) {
 }
 ));
 
-const navArr = [];
+
 //////////////////////////////////////////////////////////Get social
 
 app.get('/auth/google',
@@ -153,7 +153,6 @@ app.get('/auth/google/dailyjournal', //HIGHLIGHT : changed
 
 ///
 
-
   app.get('/auth/facebook',
   passport.authenticate('facebook'));
 
@@ -163,9 +162,9 @@ app.get('/auth/facebook/callback',
     // Successful authentication, redirect home.
     res.redirect('/dashboard');
   });
-
+*/
 //////////////////////////////////////////////////////////Get
-
+const navArr = [];
 
 app.get("/", function (req, res) {
   if (req.isAuthenticated()) {
